@@ -5,17 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
-@Table(name = "category", schema = "general")
+@Table(name = "level", schema = "general")
 @Setter
 @Getter
 @NoArgsConstructor
-public class Category {
+public class Level {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_category")
-    private Integer idCategory;
+    @Column(name = "id_level")
+    private Integer idLevel;
 
-    private String category;
+    private String level;
     private boolean status;
+
+    @OneToMany(mappedBy = "idLevel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Grade> grades;
 }

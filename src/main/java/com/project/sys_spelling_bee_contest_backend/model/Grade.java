@@ -6,16 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "category", schema = "general")
+@Table(name = "grade", schema = "general")
 @Setter
 @Getter
 @NoArgsConstructor
-public class Category {
+public class Grade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_category")
-    private Integer idCategory;
+    @Column(name = "id_grade")
+    private Integer idGrade;
 
-    private String category;
+    private String grade;
+
+    @ManyToOne
+    @JoinColumn(name = "id_level", nullable = false)
+    private Level idLevel;
+
     private boolean status;
 }
