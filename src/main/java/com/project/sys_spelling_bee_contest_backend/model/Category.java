@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "category", schema = "general")
 @Setter
@@ -18,4 +20,7 @@ public class Category {
 
     private String category;
     private boolean status;
+
+    @OneToMany(mappedBy = "idCategoryDetalle", cascade = CascadeType.ALL)
+    private List<GradeCategory> categoriesDetalle;
 }

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "grade", schema = "general")
 @Setter
@@ -23,4 +25,8 @@ public class Grade {
     private Level idLevel;
 
     private boolean status;
+
+
+    @OneToMany(mappedBy = "idGradeDetalle", cascade = CascadeType.ALL)
+    private List<GradeCategory> gradesDetalle;
 }

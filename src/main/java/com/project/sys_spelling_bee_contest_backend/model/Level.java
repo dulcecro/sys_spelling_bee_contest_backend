@@ -21,6 +21,6 @@ public class Level {
     private String level;
     private boolean status;
 
-    @OneToMany(mappedBy = "idLevel", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "idLevel", cascade = CascadeType.ALL)
     private List<Grade> grades;
 }
