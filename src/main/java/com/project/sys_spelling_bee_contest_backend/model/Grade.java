@@ -24,9 +24,10 @@ public class Grade {
     @JoinColumn(name = "id_level", nullable = false)
     private Level idLevel;
 
-    private boolean status;
+    @Column(columnDefinition = "BOOLEAN DEFAULT true")
+    private boolean status = true;
 
 
-    @OneToMany(mappedBy = "idGradeDetalle", cascade = CascadeType.ALL)
-    private List<GradeCategory> gradesDetalle;
+//    @OneToMany(mappedBy = "idGradeDetalle", cascade = CascadeType.ALL)
+//    private List<GradeCategory> gradesDetalle;
 }

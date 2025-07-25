@@ -1,4 +1,8 @@
 package com.project.sys_spelling_bee_contest_backend.repository;
 
-public interface GradeCategoryRepository {
+import com.project.sys_spelling_bee_contest_backend.model.GradeCategory;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface GradeCategoryRepository extends JpaRepository<GradeCategory, Integer> {
+
 }

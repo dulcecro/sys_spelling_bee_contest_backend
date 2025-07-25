@@ -15,7 +15,7 @@ public class GradeController {
     @Autowired
     public GradeService gradeService;
 
-    @GetMapping("grade")
+    @GetMapping("/grade")
     private List<Grade> listGrade(){
         return gradeService.listGrades();
     }

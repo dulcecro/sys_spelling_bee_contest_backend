@@ -1,5 +1,6 @@
 package com.project.sys_spelling_bee_contest_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +20,8 @@ public class Category {
     private Integer idCategory;
 
     private String category;
-    private boolean status;
 
-    @OneToMany(mappedBy = "idCategoryDetalle", cascade = CascadeType.ALL)
-    private List<GradeCategory> categoriesDetalle;
+    @Column(columnDefinition = "BOOLEAN DEFAULT true")
+    private boolean status = true;
+
 }

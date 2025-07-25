@@ -19,7 +19,9 @@ public class Level {
     private Integer idLevel;
 
     private String level;
-    private boolean status;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT true")
+    private boolean status = true;
 
     @OneToMany(mappedBy = "idLevel", cascade = CascadeType.ALL)
     private List<Grade> grades;

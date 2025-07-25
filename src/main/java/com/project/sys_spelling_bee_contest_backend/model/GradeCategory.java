@@ -24,6 +24,9 @@ public class GradeCategory {
     @JoinColumn(name = "id_category", nullable = false)
     private Category idCategoryDetalle;
 
-    private boolean active;
-    private boolean status;
+    @Column(columnDefinition = "BOOLEAN DEFAULT false")
+    private boolean active = false;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT true")
+    private boolean status = true;
 }

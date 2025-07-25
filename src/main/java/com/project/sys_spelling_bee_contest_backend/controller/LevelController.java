@@ -15,7 +15,7 @@ public class LevelController {
     @Autowired
     private LevelService levelService;
 
-    @GetMapping("level")
+    @GetMapping("/level")
     public List<Level> listLevels(){
         return levelService.listLevels();
     }
