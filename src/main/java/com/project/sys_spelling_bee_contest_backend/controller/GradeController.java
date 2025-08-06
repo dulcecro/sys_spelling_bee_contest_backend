@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/sbee")
+@RequestMapping("/sbee/grade")
 public class GradeController {
     @Autowired
     public GradeService gradeService;
 
-    @GetMapping("/grade")
+    @GetMapping()
     private List<Grade> listGrade(){
         return gradeService.listGrades();
     }

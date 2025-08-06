@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/sbee")
+@RequestMapping("/sbee/level")
 public class LevelController {
     @Autowired
     private LevelService levelService;
 
-    @GetMapping("/level")
+    @GetMapping()
     public List<Level> listLevels(){
         return levelService.listLevels();
     }

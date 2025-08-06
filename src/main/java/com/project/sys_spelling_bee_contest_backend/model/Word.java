@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Word {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_word")
     private Integer idWord;
 

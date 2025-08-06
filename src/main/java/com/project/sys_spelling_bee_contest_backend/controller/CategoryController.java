@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/sbee")
+@RequestMapping("/sbee/category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/category")
+    @GetMapping()
     public List<Category> listCategories(){
         return categoryService.listCategories();
     }
