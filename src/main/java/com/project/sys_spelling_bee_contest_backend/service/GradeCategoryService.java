@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface GradeCategoryService {
     List<GradeCategoryDTO> listGradeCategory();
+    GradeCategoryDTO findGradeCategoryById(Integer idGradeCategory);
 }

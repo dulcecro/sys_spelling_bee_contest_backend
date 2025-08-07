@@ -3,8 +3,10 @@ package com.project.sys_spelling_bee_contest_backend.controller;
 import com.project.sys_spelling_bee_contest_backend.DTO.GradeCategoryDTO;
 import com.project.sys_spelling_bee_contest_backend.service.GradeCategoryService;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +21,10 @@ public class GradeCategoryController {
     @GetMapping()
     public ResponseEntity<List<GradeCategoryDTO>> listGradeCategory() {
         return ResponseEntity.ok(gradeCategoryService.listGradeCategory());
+    }
+
+    @GetMapping("/{idGradeCategory}")
+    public ResponseEntity<GradeCategoryDTO> findGradeCategoryById(@PathVariable Integer idGradeCategory){
+        return ResponseEntity.ok(gradeCategoryService.findGradeCategoryById(idGradeCategory));
     }
 }
