@@ -24,13 +24,13 @@ public class GradeCategoryImpl implements GradeCategoryService {
             throw new RuntimeException("No exits grade with category");
         }
 
-        return gradeCategory.stream().map(gradeCategoryMapper::entityToDTO).toList();
+        return gradeCategory.stream().map(gradeCategoryMapper::gradeCategoryToDTO).toList();
     }
 
     @Override
     public GradeCategoryDTO findGradeCategoryById(Integer idGradeCategory){
         return gradeCategoryRepository.findById(idGradeCategory).
-                map(gradeCategoryMapper::entityToDTO).
+                map(gradeCategoryMapper::gradeCategoryToDTO).
                 orElseThrow(() -> new RuntimeException("Grade category not found with ID: " + idGradeCategory));
     }
 }

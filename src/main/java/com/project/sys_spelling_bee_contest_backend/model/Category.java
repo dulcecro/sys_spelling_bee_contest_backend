@@ -23,5 +23,4 @@ public class Category {
 
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean status = true;
-
 }

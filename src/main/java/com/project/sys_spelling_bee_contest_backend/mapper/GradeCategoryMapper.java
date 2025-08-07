@@ -12,5 +12,5 @@ public interface GradeCategoryMapper {
             @Mapping(source = "idGradeDetalle.grade", target = "grade"),
             @Mapping(source = "idGradeDetalle.idLevel.level", target = "level")
     })
-    GradeCategoryDTO entityToDTO(GradeCategory gradeCategory);
+    GradeCategoryDTO gradeCategoryToDTO(GradeCategory gradeCategory);
 }
