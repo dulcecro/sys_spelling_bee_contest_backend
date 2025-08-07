@@ -1,8 +1,9 @@
 package com.project.sys_spelling_bee_contest_backend.controller;
 
-import com.project.sys_spelling_bee_contest_backend.model.GradeCategory;
+import com.project.sys_spelling_bee_contest_backend.DTO.GradeCategoryDTO;
 import com.project.sys_spelling_bee_contest_backend.service.GradeCategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sbee/gradeCategory")
+@RequiredArgsConstructor
 public class GradeCategoryController {
-    @Autowired
-    private GradeCategoryService gradeCategoryService;
+    private final GradeCategoryService gradeCategoryService;
 
     @GetMapping()
-    public List<GradeCategory> listGradeCategory() {
-        return gradeCategoryService.listGradeCategory();
+    public ResponseEntity<List<GradeCategoryDTO>> listGradeCategory() {
+        return ResponseEntity.ok(gradeCategoryService.listGradeCategory());
     }
 }
