@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,5 +33,12 @@ public class WordImpl implements WordService {
             throw new RuntimeException("Grade category not found with ID: " + idGradeCategory);
         }
         return words.stream().map(wordMapper::wordToDTO).toList();
+    }
+
+    @Override
+    public WordDTO findWordByIdNumberAndIdGradeCategory(Integer idNumber, Integer IdGradeCategory){
+        return wordRepository.findWordByIdNumberAndIdGradeCategory_IdGradeCategory(idNumber, IdGradeCategory)
+                .map(wordMapper::wordToDTO)
+                .orElseThrow(() -> new RuntimeException("Word not found with ID: " + idNumber));
     }
 }

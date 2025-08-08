@@ -22,8 +22,13 @@ public class WordController {
         return ResponseEntity.ok(wordService.listWords());
     }
 
-    @GetMapping("{idGradeCategory}")
+    @GetMapping("/{idGradeCategory}")
     public ResponseEntity<List<WordDTO>> findWordsByIdGradeCategory(@PathVariable Integer idGradeCategory){
         return ResponseEntity.ok(wordService.findWordsByIdGradeCategory(idGradeCategory));
+    }
+
+    @GetMapping("/word_number/{idNumber}/{idGradeCategory}")
+    public ResponseEntity<WordDTO> findWordByIdNumberAndIdGradeCategory(@PathVariable Integer idNumber, @PathVariable Integer idGradeCategory){
+        return ResponseEntity.ok(wordService.findWordByIdNumberAndIdGradeCategory(idNumber, idGradeCategory));
     }
 }
