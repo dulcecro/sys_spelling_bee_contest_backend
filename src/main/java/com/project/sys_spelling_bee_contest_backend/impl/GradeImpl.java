@@ -1,0 +1,27 @@
+package com.project.sys_spelling_bee_contest_backend.impl;
+
+import com.project.sys_spelling_bee_contest_backend.DTO.GradeDTO;
+import com.project.sys_spelling_bee_contest_backend.mapper.GradeMapper;
+import com.project.sys_spelling_bee_contest_backend.model.Grade;
+import com.project.sys_spelling_bee_contest_backend.repository.GradeRepository;
+import com.project.sys_spelling_bee_contest_backend.service.GradeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class GradeImpl implements GradeService {
+    private final GradeRepository gradeRepository;
+    private final GradeMapper gradeMapper;
+
+    public List<GradeDTO> listGrades(){
+        List<Grade> grade = gradeRepository.findAll();
+        if(grade.isEmpty()){
+            throw new RuntimeException("Grades not found");
+        }
+
+        return grade.stream().map(gradeMapper::gradeToDTO).toList();
+    };
+}

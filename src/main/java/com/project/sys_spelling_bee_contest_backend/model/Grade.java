@@ -26,8 +26,4 @@ public class Grade {
 
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean status = true;
-
-
-//    @OneToMany(mappedBy = "idGradeDetalle", cascade = CascadeType.ALL)
-//    private List<GradeCategory> gradesDetalle;
 }
