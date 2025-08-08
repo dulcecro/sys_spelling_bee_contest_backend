@@ -1,8 +1,9 @@
 package com.project.sys_spelling_bee_contest_backend.controller;
 
-import com.project.sys_spelling_bee_contest_backend.model.Word;
+import com.project.sys_spelling_bee_contest_backend.DTO.WordDTO;
 import com.project.sys_spelling_bee_contest_backend.service.WordService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/sbee/word")
+@RequiredArgsConstructor
 public class WordController {
-    @Autowired
-    private WordService wordService;
+    private final WordService wordService;
 
     @GetMapping()
-    public List<Word> listWords(){
-        return wordService.listWords();
+    public ResponseEntity<List<WordDTO>> listWords(){
+        return ResponseEntity.ok(wordService.listWords());
     }
 }

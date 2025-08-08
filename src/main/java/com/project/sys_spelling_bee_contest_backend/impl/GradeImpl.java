@@ -16,6 +16,7 @@ public class GradeImpl implements GradeService {
     private final GradeRepository gradeRepository;
     private final GradeMapper gradeMapper;
 
+    @Override
     public List<GradeDTO> listGrades(){
         List<Grade> grade = gradeRepository.findAll();
         if(grade.isEmpty()){
