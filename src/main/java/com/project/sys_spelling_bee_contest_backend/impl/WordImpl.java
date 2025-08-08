@@ -28,7 +28,7 @@ public class WordImpl implements WordService {
 
     @Override
     public List<WordDTO> findWordsByIdGradeCategory (Integer idGradeCategory) {
-        List<Word> words = wordRepository.findAllByIdGradeCategory_IdGradeCategory(idGradeCategory);
+        List<Word> words = wordRepository.findAllByIdGradeCategory_IdGradeCategoryAndUsedFalse(idGradeCategory);
         if(words.isEmpty()){
             throw new RuntimeException("Grade category not found with ID: " + idGradeCategory);
         }
@@ -40,5 +40,13 @@ public class WordImpl implements WordService {
         return wordRepository.findWordByIdNumberAndIdGradeCategory_IdGradeCategory(idNumber, IdGradeCategory)
                 .map(wordMapper::wordToDTO)
                 .orElseThrow(() -> new RuntimeException("Word not found with ID: " + idNumber));
+    }
+
+    @Override
+    public WordDTO updateActive(Integer idNumber, Integer idGradeCategory, WordDTO wordDTO){
+        Word word = wordRepository.findWordByIdNumberAndIdGradeCategory_IdGradeCategory(idNumber, idGradeCategory)
+                .orElseThrow(() -> new RuntimeException("Word not found with ID: " + idNumber));
+        word.setUsed(wordDTO.isUsed());
+        return wordMapper.wordToDTO(wordRepository.save(word));
     }
 }
