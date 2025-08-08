@@ -5,6 +5,7 @@ import com.project.sys_spelling_bee_contest_backend.service.WordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,10 @@ public class WordController {
     @GetMapping()
     public ResponseEntity<List<WordDTO>> listWords(){
         return ResponseEntity.ok(wordService.listWords());
+    }
+
+    @GetMapping("{idGradeCategory}")
+    public ResponseEntity<List<WordDTO>> findWordsByIdGradeCategory(@PathVariable Integer idGradeCategory){
+        return ResponseEntity.ok(wordService.findWordsByIdGradeCategory(idGradeCategory));
     }
 }

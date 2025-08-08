@@ -24,4 +24,13 @@ public class WordImpl implements WordService {
         }
         return words.stream().map(wordMapper::wordToDTO).toList();
     }
+
+    @Override
+    public List<WordDTO> findWordsByIdGradeCategory (Integer idGradeCategory) {
+        List<Word> words = wordRepository.findAllByIdGradeCategory_IdGradeCategory(idGradeCategory);
+        if(words.isEmpty()){
+            throw new RuntimeException("Grade category not found with ID: " + idGradeCategory);
+        }
+        return words.stream().map(wordMapper::wordToDTO).toList();
+    }
 }

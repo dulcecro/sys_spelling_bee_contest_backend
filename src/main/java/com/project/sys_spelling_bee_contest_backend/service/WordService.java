@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface WordService {
     List<WordDTO> listWords();
+    List<WordDTO> findWordsByIdGradeCategory(Integer idGradeCategory);
 }
