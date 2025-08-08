@@ -14,10 +14,13 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_student")
-    private int idStudent;
+    private Integer idStudent;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "paternal_surname")
+    private String paternalSurname;
+
+    @Column(name = "maternal_surname")
+    private String maternalSurname;
     private String name;
 
     @ManyToOne

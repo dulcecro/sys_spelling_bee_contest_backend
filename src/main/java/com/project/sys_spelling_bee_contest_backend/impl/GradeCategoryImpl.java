@@ -21,7 +21,7 @@ public class GradeCategoryImpl implements GradeCategoryService {
         List<GradeCategory> gradeCategory = gradeCategoryRepository.findAll();
 
         if(gradeCategory.isEmpty()) {
-            throw new RuntimeException("No exits grade with category");
+            throw new RuntimeException("The list of grade with category is empty");
         }
 
         return gradeCategory.stream().map(gradeCategoryMapper::gradeCategoryToDTO).toList();

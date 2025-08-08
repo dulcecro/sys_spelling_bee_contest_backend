@@ -20,7 +20,7 @@ public class GradeImpl implements GradeService {
     public List<GradeDTO> listGrades(){
         List<Grade> grade = gradeRepository.findAll();
         if(grade.isEmpty()){
-            throw new RuntimeException("Grades not found");
+            throw new RuntimeException("The list of grades is empty");
         }
 
         return grade.stream().map(gradeMapper::gradeToDTO).toList();

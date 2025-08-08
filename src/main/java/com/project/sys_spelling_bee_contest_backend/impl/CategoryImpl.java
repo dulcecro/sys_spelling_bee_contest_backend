@@ -21,7 +21,7 @@ public class CategoryImpl implements CategoryService {
         List<Category> category = categoryRepository.findAll();
 
         if(category.isEmpty()){
-            throw new RuntimeException("No exists category");
+            throw new RuntimeException("The list of categories is empty");
         }
 
         return category.stream().map(categoryMapper::categoryToDTO).toList();

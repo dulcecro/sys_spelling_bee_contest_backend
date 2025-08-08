@@ -20,7 +20,7 @@ public class LevelImpl implements LevelService {
     public List<LevelDTO> listLevels() {
         List<Level> levels = levelRepository.findAll();
         if(levels.isEmpty()){
-            throw new RuntimeException("No levels found");
+            throw new RuntimeException("The list of levels is empty");
         }
         return levels.stream().map(levelMapper::levelToDTO).toList();
     }
