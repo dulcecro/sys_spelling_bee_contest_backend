@@ -27,20 +27,20 @@ public class Round {
     @JoinColumn(name = "id_word", nullable = false)
     private Word idWordRound;
 
-    @Column(name = "criterion_one")
-    private Integer criterionOne;
+    @Column(name = "criterion_one", columnDefinition = "INTEGER DEFAULT 5")
+    private Integer criterionOne = 5;
 
-    @Column(name = "criterion_two")
-    private Integer criterionTwo;
+    @Column(name = "criterion_two", columnDefinition = "INTEGER DEFAULT 5")
+    private Integer criterionTwo = 5;
 
-    @Column(name = "criterion_three")
-    private Integer criterionThree;
+    @Column(name = "criterion_three", columnDefinition = "INTEGER DEFAULT 5")
+    private Integer criterionThree = 5;
 
-    @Column(name = "criterion_four")
-    private Integer criterionFour;
+    @Column(name = "criterion_four", columnDefinition = "INTEGER DEFAULT 5")
+    private Integer criterionFour = 5;
 
-    @Column(name = "criterion_five")
-    private Integer criterionFive;
+    @Column(name = "criterion_five", columnDefinition = "INTEGER DEFAULT 5")
+    private Integer criterionFive = 5;
 
     private Integer position;
 
