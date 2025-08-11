@@ -10,8 +10,7 @@ import lombok.Setter;
 public class WordDTO {
     private Integer idWord;
     private Integer idGradeCategory;
-    private Integer idNumber;
+    private Integer number;
     private String word;
     private String pronunciation;
-    private boolean used;
 }

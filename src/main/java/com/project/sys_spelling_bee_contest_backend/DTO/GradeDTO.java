@@ -10,8 +10,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class GradeDTO {
     private Integer idGrade;
-    private String grade;
+    private String gradeName;
     private Integer idLevel;
-    private String level;
+    private String levelName;
     private boolean status;
 }

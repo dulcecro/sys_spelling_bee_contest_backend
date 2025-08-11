@@ -15,8 +15,14 @@ import java.time.LocalDate;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_event")
     private Integer idEvent;
-    private String nameEvent;
+
+    @Column(name = "event_name")
+    private String eventName;
+
     private LocalDate date;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean status = true;
 }

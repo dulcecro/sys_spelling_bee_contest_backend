@@ -20,12 +20,9 @@ public class Word {
     @JoinColumn(name = "id_grade_category", nullable = false)
     private GradeCategory idGradeCategory;
 
-    @Column(name = "id_number")
-    private Integer idNumber;
+    @Column(name = "number")
+    private Integer number;
 
     private String word;
     private String pronunciation;
-
-    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
-    private boolean used = false;
 }

@@ -9,8 +9,8 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface GradeCategoryMapper {
     @Mappings({
-            @Mapping(source = "idGradeDetalle.grade", target = "grade"),
-            @Mapping(source = "idGradeDetalle.idLevel.level", target = "level")
+            @Mapping(source = "idGradeDetalle.gradeName", target = "grade"),
+            @Mapping(source = "idGradeDetalle.idLevel.levelName", target = "level")
     })
     GradeCategoryDTO gradeCategoryToDTO(GradeCategory gradeCategory);
 }

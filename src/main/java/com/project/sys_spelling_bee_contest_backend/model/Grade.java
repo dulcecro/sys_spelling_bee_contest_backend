@@ -18,7 +18,8 @@ public class Grade {
     @Column(name = "id_grade")
     private Integer idGrade;
 
-    private String grade;
+    @Column(name = "grade_name")
+    private String gradeName;
 
     @ManyToOne
     @JoinColumn(name = "id_level", nullable = false)

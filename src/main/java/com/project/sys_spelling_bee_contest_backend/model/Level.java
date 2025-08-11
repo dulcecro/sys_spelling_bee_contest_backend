@@ -18,7 +18,8 @@ public class Level {
     @Column(name = "id_level")
     private Integer idLevel;
 
-    private String level;
+    @Column(name = "level_name")
+    private String levelName;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean status = true;

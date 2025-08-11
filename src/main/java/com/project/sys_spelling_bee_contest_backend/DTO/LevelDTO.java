@@ -9,6 +9,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class LevelDTO {
     private Integer idLevel;
-    private String level;
+    private String levelName;
     private boolean status;
 }

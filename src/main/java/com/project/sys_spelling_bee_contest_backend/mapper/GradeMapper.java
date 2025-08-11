@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface GradeMapper {
     @Mappings({
-            @Mapping(source = "idLevel.level", target = "level"),
+            @Mapping(source = "idLevel.levelName", target = "levelName"),
             @Mapping(source = "idLevel.idLevel", target = "idLevel")
     })
 

@@ -19,7 +19,10 @@ public class Category {
     @Column(name = "id_category")
     private Integer idCategory;
 
-    private String category;
+    @Column(name = "category_name")
+    private String categoryName;
+
+    private Integer difficulty;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean status = true;

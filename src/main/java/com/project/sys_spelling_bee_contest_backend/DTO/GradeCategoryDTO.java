@@ -11,5 +11,4 @@ public class GradeCategoryDTO {
     private int idGradeCategory;
     private String grade;
     private String level;
-    private boolean active;
 }

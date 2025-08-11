@@ -8,6 +8,5 @@ import java.util.Optional;
 public interface WordService {
     List<WordDTO> listWords();
     List<WordDTO> findWordsByIdGradeCategory(Integer idGradeCategory);
-    WordDTO findWordByIdNumberAndIdGradeCategory(Integer idNumber, Integer idGradeCategory);
-    WordDTO updateActive(Integer idNumber, Integer idGradeCategory, WordDTO wordDTO);
+    WordDTO findWordByNumberAndIdGradeCategory(Integer number, Integer idGradeCategory);
 }

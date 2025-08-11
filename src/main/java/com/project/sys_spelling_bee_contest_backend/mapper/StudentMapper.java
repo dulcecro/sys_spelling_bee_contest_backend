@@ -10,9 +10,9 @@ import org.mapstruct.Mappings;
 public interface StudentMapper {
     @Mappings({
             @Mapping(source = "idGrade.idGrade", target = "idGrade"),
-            @Mapping(source = "idGrade.grade", target = "grade"),
+            @Mapping(source = "idGrade.gradeName", target = "grade"),
             @Mapping(source = "idGrade.idLevel.idLevel", target = "idLevel"),
-            @Mapping(source = "idGrade.idLevel.level", target = "level"),
+            @Mapping(source = "idGrade.idLevel.levelName", target = "level"),
     })
     StudentDTO studentToDTO(Student student);
 }

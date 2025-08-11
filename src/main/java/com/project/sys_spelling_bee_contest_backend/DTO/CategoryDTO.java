@@ -10,6 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategoryDTO {
     private Integer idCategory;
-    private String category;
+    private String categoryName;
+    private Integer difficulty;
     private boolean status;
 }

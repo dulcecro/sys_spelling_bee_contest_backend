@@ -24,13 +24,8 @@ public class WordController {
         return ResponseEntity.ok(wordService.findWordsByIdGradeCategory(idGradeCategory));
     }
 
-    @GetMapping("/word_number/{idNumber}/{idGradeCategory}")
-    public ResponseEntity<WordDTO> findWordByIdNumberAndIdGradeCategory(@PathVariable Integer idNumber, @PathVariable Integer idGradeCategory){
-        return ResponseEntity.ok(wordService.findWordByIdNumberAndIdGradeCategory(idNumber, idGradeCategory));
-    }
-
-    @PutMapping("/{idNumber}/{idGradeCategory}")
-    public ResponseEntity<WordDTO> updateActive(@PathVariable Integer idNumber, @PathVariable Integer idGradeCategory, @RequestBody WordDTO wordDTO){
-        return ResponseEntity.ok(wordService.updateActive(idNumber, idGradeCategory, wordDTO));
+    @GetMapping("/word_number/{number}/{idGradeCategory}")
+    public ResponseEntity<WordDTO> findWordByNumberAndIdGradeCategory(@PathVariable Integer number, @PathVariable Integer idGradeCategory){
+        return ResponseEntity.ok(wordService.findWordByNumberAndIdGradeCategory(number, idGradeCategory));
     }
 }
