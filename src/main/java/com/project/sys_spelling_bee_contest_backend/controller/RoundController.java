@@ -3,10 +3,8 @@ package com.project.sys_spelling_bee_contest_backend.controller;
 import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
 import com.project.sys_spelling_bee_contest_backend.service.RoundService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,7 +15,12 @@ public class RoundController {
     private final RoundService roundService;
 
     @GetMapping("/{numberRound}/{idGrade}")
-    public List<RoundDTO> listRoundsByNumberRoundAndGrades(@PathVariable Integer numberRound, @PathVariable Integer idGrade) {
-        return roundService.listRoundsByNumberRoundAndGrades(numberRound, idGrade);
+    public ResponseEntity<List<RoundDTO>> listRoundsByNumberRoundAndGrades(@PathVariable Integer numberRound, @PathVariable Integer idGrade) {
+        return ResponseEntity.ok(roundService.listRoundsByNumberRoundAndGrades(numberRound, idGrade));
+    }
+
+    @PutMapping("/{idRound}")
+    public ResponseEntity<RoundDTO> updateScoreAndPosition(@PathVariable Integer idRound, @RequestBody RoundDTO roundDTO){
+        return ResponseEntity.ok(roundService.updateScoreAndPosition(idRound, roundDTO));
     }
 }
