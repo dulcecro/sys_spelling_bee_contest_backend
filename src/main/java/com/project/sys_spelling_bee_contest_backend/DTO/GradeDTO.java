@@ -14,4 +14,5 @@ public class GradeDTO {
     private Integer idLevel;
     private String levelName;
     private boolean status;
+    private Integer priority;
 }

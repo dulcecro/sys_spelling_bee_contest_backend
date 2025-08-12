@@ -27,4 +27,6 @@ public class Grade {
 
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
     private boolean status = true;
+
+    private Integer priority;
 }
