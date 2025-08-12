@@ -17,8 +17,8 @@ public class RoundImpl implements RoundService {
     private final RoundMapper roundMapper;
 
     @Override
-    public List<RoundDTO> listRoundsByGrades(){
-        List<Round> rounds = roundRepository.findAll();
+    public List<RoundDTO> listRoundsByNumberRoundAndGrades(Integer numberRound, Integer idGrade) {
+        List<Round> rounds = roundRepository.findAllByNumberRoundAndIdStudentEventRound_IdGradeDetail_IdGradeOrderByIdStudentEventRound_IdStudentDetail_PaternalSurnameAscIdStudentEventRound_IdStudentDetail_MaternalSurnameAsc(numberRound, idGrade);
         if(rounds.isEmpty()){
             throw new RuntimeException("The list of rounds is empty");
         };

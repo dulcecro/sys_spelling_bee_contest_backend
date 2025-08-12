@@ -3,6 +3,8 @@ package com.project.sys_spelling_bee_contest_backend.repository;
 import com.project.sys_spelling_bee_contest_backend.model.Round;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoundRepository extends JpaRepository<Round, Integer> {
+import java.util.List;
 
+public interface RoundRepository extends JpaRepository<Round, Integer> {
+    List<Round> findAllByNumberRoundAndIdStudentEventRound_IdGradeDetail_IdGradeOrderByIdStudentEventRound_IdStudentDetail_PaternalSurnameAscIdStudentEventRound_IdStudentDetail_MaternalSurnameAsc(Integer numberRound, Integer idGrade);
 }

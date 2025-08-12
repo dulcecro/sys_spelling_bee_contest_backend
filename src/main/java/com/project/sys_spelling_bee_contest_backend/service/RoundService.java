@@ -5,5 +5,5 @@ import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
 import java.util.List;
 
 public interface RoundService {
-    List<RoundDTO> listRoundsByGrades();
+    List<RoundDTO> listRoundsByNumberRoundAndGrades(Integer numberRound, Integer idGrade);
 }
