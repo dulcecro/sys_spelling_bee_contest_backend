@@ -12,8 +12,12 @@ import lombok.Setter;
 public class RoundDTO {
     private Integer idRound;
     private Integer numberRound;
-    private StudentEvent idStudentEventRound;
-    private Word idWordRound;
+    private Integer idStudentEventRound;
+    private String paternalSurname;
+    private String maternalSurname;
+    private String nameStudent;
+    private Integer idWordRound;
+    private String word;
     private Integer criterionOne;
     private Integer criterionTwo;
     private Integer criterionThree;
