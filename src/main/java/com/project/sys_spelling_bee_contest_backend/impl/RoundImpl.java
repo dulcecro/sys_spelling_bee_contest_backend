@@ -36,4 +36,13 @@ public class RoundImpl implements RoundService {
         rounds.setPosition(roundDTO.getPosition());
         return roundMapper.roundToDTO(roundRepository.save(rounds));
     }
+
+    @Override
+    public RoundDTO addRound(RoundDTO roundDTO){
+        Round round = roundMapper.dtoToRound(roundDTO);
+        if (round.getIdWordRound() != null && round.getIdWordRound().getIdWord() == null) {
+            round.setIdWordRound(null);
+        }
+        return roundMapper.roundToDTO(roundRepository.save(round));
+    }
 }

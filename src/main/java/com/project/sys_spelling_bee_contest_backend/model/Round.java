@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.DynamicInsert;
 
 @Entity
 @Table(name = "round", schema = "sbee")
 @Getter
 @Setter
 @NoArgsConstructor
+@DynamicInsert
 public class Round {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +26,7 @@ public class Round {
     private StudentEvent idStudentEventRound;
 
     @ManyToOne
-    @JoinColumn(name = "id_word", nullable = false)
+    @JoinColumn(name = "id_word")
     private Word idWordRound;
 
     @Column(name = "criterion_one", columnDefinition = "INTEGER DEFAULT 5")
@@ -42,6 +44,7 @@ public class Round {
     @Column(name = "criterion_five", columnDefinition = "INTEGER DEFAULT 5")
     private Integer criterionFive = 5;
 
+    @Column(name = "position", columnDefinition = "INTEGER DEFAULT 0")
     private Integer position;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")

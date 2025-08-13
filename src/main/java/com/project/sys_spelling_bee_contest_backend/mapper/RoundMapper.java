@@ -17,4 +17,10 @@ public interface RoundMapper {
             @Mapping(source = "idWordRound.word", target = "word")
     })
     RoundDTO roundToDTO(Round round);
+
+    @Mappings({
+            @Mapping(source = "idStudentEventRound", target = "idStudentEventRound.idStudentEvent"),
+            @Mapping(source = "idWordRound", target = "idWordRound.idWord")
+    })
+    Round dtoToRound(RoundDTO roundDTO);
 }
