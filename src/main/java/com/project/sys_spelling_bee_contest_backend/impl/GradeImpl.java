@@ -18,7 +18,7 @@ public class GradeImpl implements GradeService {
 
     @Override
     public List<GradeDTO> listGrades(){
-        List<Grade> grade = gradeRepository.findAll();
+        List<Grade> grade = gradeRepository.findAllByStatusIsTrue();
         if(grade.isEmpty()){
             throw new RuntimeException("The list of grades is empty");
         }
