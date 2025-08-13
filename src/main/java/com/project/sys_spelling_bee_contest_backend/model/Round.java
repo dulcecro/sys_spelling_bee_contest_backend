@@ -48,5 +48,5 @@ public class Round {
     private Integer position;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
-    private boolean close = false;
+    private Boolean close = false;
 }

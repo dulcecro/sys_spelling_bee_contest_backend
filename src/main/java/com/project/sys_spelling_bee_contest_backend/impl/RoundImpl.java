@@ -3,7 +3,9 @@ package com.project.sys_spelling_bee_contest_backend.impl;
 import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
 import com.project.sys_spelling_bee_contest_backend.mapper.RoundMapper;
 import com.project.sys_spelling_bee_contest_backend.model.Round;
+import com.project.sys_spelling_bee_contest_backend.model.Word;
 import com.project.sys_spelling_bee_contest_backend.repository.RoundRepository;
+import com.project.sys_spelling_bee_contest_backend.repository.WordRepository;
 import com.project.sys_spelling_bee_contest_backend.service.RoundService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,7 @@ import java.util.List;
 public class RoundImpl implements RoundService {
     private final RoundRepository roundRepository;
     private final RoundMapper roundMapper;
+    private final WordRepository wordRepository;
 
     @Override
     public List<RoundDTO> listRoundsByNumberRoundAndGrades(Integer numberRound, Integer idGrade) {
@@ -26,14 +29,20 @@ public class RoundImpl implements RoundService {
     }
 
     @Override
-    public RoundDTO updateScoreAndPosition(Integer idRound, RoundDTO roundDTO){
+    public RoundDTO updateRound(Integer idRound, RoundDTO roundDTO){
         Round rounds = roundRepository.findById(idRound).orElseThrow(()-> new RuntimeException("The round with ID" + idRound + " does not exist"));
-        rounds.setCriterionOne(roundDTO.getCriterionOne());
-        rounds.setCriterionTwo(roundDTO.getCriterionTwo());
-        rounds.setCriterionThree(roundDTO.getCriterionThree());
-        rounds.setCriterionFour(roundDTO.getCriterionFour());
-        rounds.setCriterionFive(roundDTO.getCriterionFive());
-        rounds.setPosition(roundDTO.getPosition());
+        if(roundDTO.getCriterionOne() != null) rounds.setCriterionOne(roundDTO.getCriterionOne());
+        if(roundDTO.getCriterionTwo() != null) rounds.setCriterionTwo(roundDTO.getCriterionTwo());
+        if(roundDTO.getCriterionThree() != null) rounds.setCriterionThree(roundDTO.getCriterionThree());
+        if(roundDTO.getCriterionFour() != null) rounds.setCriterionFour(roundDTO.getCriterionFour());
+        if(roundDTO.getCriterionFive() != null) rounds.setCriterionFive(roundDTO.getCriterionFive());
+        if(roundDTO.getPosition() != null) rounds.setPosition(roundDTO.getPosition());
+        if(roundDTO.getClose() != null) rounds.setClose(roundDTO.getClose());
+        if(roundDTO.getIdWordRound() != null) {
+            Word word = wordRepository.findById(roundDTO.getIdWordRound())
+                    .orElseThrow(() -> new RuntimeException("Word no encontrada"));
+            rounds.setIdWordRound(word);
+        }
         return roundMapper.roundToDTO(roundRepository.save(rounds));
     }
 

@@ -20,9 +20,9 @@ public class RoundController {
         return ResponseEntity.ok(roundService.listRoundsByNumberRoundAndGrades(numberRound, idGrade));
     }
 
-    @PutMapping("/{idRound}")
-    public ResponseEntity<RoundDTO> updateScoreAndPosition(@PathVariable Integer idRound, @RequestBody RoundDTO roundDTO){
-        return ResponseEntity.ok(roundService.updateScoreAndPosition(idRound, roundDTO));
+    @PatchMapping("/{idRound}")
+    public ResponseEntity<RoundDTO> updateRound(@PathVariable Integer idRound, @RequestBody RoundDTO roundDTO){
+        return ResponseEntity.ok(roundService.updateRound(idRound, roundDTO));
     }
 
     @PostMapping()
