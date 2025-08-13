@@ -13,6 +13,6 @@ public class GradeDTO {
     private String gradeName;
     private Integer idLevel;
     private String levelName;
-    private boolean status;
+    private Boolean status;
     private Integer priority;
 }

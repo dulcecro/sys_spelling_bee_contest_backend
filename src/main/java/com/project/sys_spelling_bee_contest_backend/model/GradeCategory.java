@@ -25,5 +25,5 @@ public class GradeCategory {
     private Category idCategoryDetalle;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
-    private boolean status = true;
+    private Boolean status = true;
 }

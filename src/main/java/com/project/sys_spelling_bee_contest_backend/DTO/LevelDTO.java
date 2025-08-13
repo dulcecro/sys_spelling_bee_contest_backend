@@ -10,5 +10,5 @@ import lombok.Setter;
 public class LevelDTO {
     private Integer idLevel;
     private String levelName;
-    private boolean status;
+    private Boolean status;
 }

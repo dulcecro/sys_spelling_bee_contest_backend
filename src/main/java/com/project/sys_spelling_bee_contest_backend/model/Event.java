@@ -24,5 +24,5 @@ public class Event {
     private LocalDate date;
 
     @Column(columnDefinition = "BOOLEAN DEFAULT true")
-    private boolean status = true;
+    private Boolean status = true;
 }

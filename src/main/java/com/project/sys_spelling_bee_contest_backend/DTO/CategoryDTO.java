@@ -12,5 +12,5 @@ public class CategoryDTO {
     private Integer idCategory;
     private String categoryName;
     private Integer difficulty;
-    private boolean status;
+    private Boolean status;
 }
