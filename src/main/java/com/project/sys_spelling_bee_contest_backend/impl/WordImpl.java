@@ -2,14 +2,13 @@ package com.project.sys_spelling_bee_contest_backend.impl;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.WordDTO;
 import com.project.sys_spelling_bee_contest_backend.mapper.WordMapper;
-import com.project.sys_spelling_bee_contest_backend.model.Word;
+import com.project.sys_spelling_bee_contest_backend.entity.Word;
 import com.project.sys_spelling_bee_contest_backend.repository.WordRepository;
 import com.project.sys_spelling_bee_contest_backend.service.WordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

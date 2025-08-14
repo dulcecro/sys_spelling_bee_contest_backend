@@ -2,7 +2,7 @@ package com.project.sys_spelling_bee_contest_backend.impl;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.StudentDTO;
 import com.project.sys_spelling_bee_contest_backend.mapper.StudentMapper;
-import com.project.sys_spelling_bee_contest_backend.model.Student;
+import com.project.sys_spelling_bee_contest_backend.entity.Student;
 import com.project.sys_spelling_bee_contest_backend.repository.StudentRepository;
 import com.project.sys_spelling_bee_contest_backend.service.StudentService;
 import lombok.RequiredArgsConstructor;

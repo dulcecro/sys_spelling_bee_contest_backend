@@ -1,11 +1,9 @@
-package com.project.sys_spelling_bee_contest_backend.model;
+package com.project.sys_spelling_bee_contest_backend.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Entity
 @Table(name = "grade", schema = "general")

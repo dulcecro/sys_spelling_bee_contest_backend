@@ -1,7 +1,7 @@
 package com.project.sys_spelling_bee_contest_backend.mapper;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
-import com.project.sys_spelling_bee_contest_backend.model.Round;
+import com.project.sys_spelling_bee_contest_backend.entity.Round;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

@@ -1,6 +1,6 @@
 package com.project.sys_spelling_bee_contest_backend.repository;
 
-import com.project.sys_spelling_bee_contest_backend.model.Round;
+import com.project.sys_spelling_bee_contest_backend.entity.Round;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

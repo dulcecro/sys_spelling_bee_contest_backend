@@ -1,7 +1,6 @@
 package com.project.sys_spelling_bee_contest_backend.controller;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
-import com.project.sys_spelling_bee_contest_backend.model.Round;
 import com.project.sys_spelling_bee_contest_backend.service.RoundService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

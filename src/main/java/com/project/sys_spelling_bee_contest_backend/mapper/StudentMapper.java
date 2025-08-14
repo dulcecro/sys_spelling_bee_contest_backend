@@ -1,7 +1,7 @@
 package com.project.sys_spelling_bee_contest_backend.mapper;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.StudentDTO;
-import com.project.sys_spelling_bee_contest_backend.model.Student;
+import com.project.sys_spelling_bee_contest_backend.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

@@ -1,7 +1,5 @@
 package com.project.sys_spelling_bee_contest_backend.DTO;
 
-import com.project.sys_spelling_bee_contest_backend.model.StudentEvent;
-import com.project.sys_spelling_bee_contest_backend.model.Word;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

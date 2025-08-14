@@ -2,8 +2,8 @@ package com.project.sys_spelling_bee_contest_backend.impl;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
 import com.project.sys_spelling_bee_contest_backend.mapper.RoundMapper;
-import com.project.sys_spelling_bee_contest_backend.model.Round;
-import com.project.sys_spelling_bee_contest_backend.model.Word;
+import com.project.sys_spelling_bee_contest_backend.entity.Round;
+import com.project.sys_spelling_bee_contest_backend.entity.Word;
 import com.project.sys_spelling_bee_contest_backend.repository.RoundRepository;
 import com.project.sys_spelling_bee_contest_backend.repository.WordRepository;
 import com.project.sys_spelling_bee_contest_backend.service.RoundService;

@@ -2,7 +2,7 @@ package com.project.sys_spelling_bee_contest_backend.impl;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.CategoryDTO;
 import com.project.sys_spelling_bee_contest_backend.mapper.CategoryMapper;
-import com.project.sys_spelling_bee_contest_backend.model.Category;
+import com.project.sys_spelling_bee_contest_backend.entity.Category;
 import com.project.sys_spelling_bee_contest_backend.repository.CategoryRepository;
 import com.project.sys_spelling_bee_contest_backend.service.CategoryService;
 import lombok.RequiredArgsConstructor;

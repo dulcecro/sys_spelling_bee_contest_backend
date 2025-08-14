@@ -2,7 +2,7 @@ package com.project.sys_spelling_bee_contest_backend.impl;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.GradeDTO;
 import com.project.sys_spelling_bee_contest_backend.mapper.GradeMapper;
-import com.project.sys_spelling_bee_contest_backend.model.Grade;
+import com.project.sys_spelling_bee_contest_backend.entity.Grade;
 import com.project.sys_spelling_bee_contest_backend.repository.GradeRepository;
 import com.project.sys_spelling_bee_contest_backend.service.GradeService;
 import lombok.RequiredArgsConstructor;

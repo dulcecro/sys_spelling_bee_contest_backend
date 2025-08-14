@@ -2,7 +2,7 @@ package com.project.sys_spelling_bee_contest_backend.impl;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.LevelDTO;
 import com.project.sys_spelling_bee_contest_backend.mapper.LevelMapper;
-import com.project.sys_spelling_bee_contest_backend.model.Level;
+import com.project.sys_spelling_bee_contest_backend.entity.Level;
 import com.project.sys_spelling_bee_contest_backend.repository.LevelRepository;
 import com.project.sys_spelling_bee_contest_backend.service.LevelService;
 import lombok.RequiredArgsConstructor;

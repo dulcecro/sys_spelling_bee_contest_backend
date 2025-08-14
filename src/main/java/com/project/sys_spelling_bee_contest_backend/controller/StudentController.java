@@ -1,7 +1,6 @@
 package com.project.sys_spelling_bee_contest_backend.controller;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.StudentDTO;
-import com.project.sys_spelling_bee_contest_backend.model.Student;
 import com.project.sys_spelling_bee_contest_backend.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
