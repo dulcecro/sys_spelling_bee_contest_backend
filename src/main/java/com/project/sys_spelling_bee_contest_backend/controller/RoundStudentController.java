@@ -14,14 +14,14 @@ import java.util.List;
 public class RoundStudentController {
     private final RoundStudentService roundStudentService;
 
-    @GetMapping("/{numberRound}/{idGrade}")
-    public ResponseEntity<List<RoundStudentDTO>> listRoundsByNumberRoundAndGrades(@PathVariable Integer numberRound, @PathVariable Integer idGrade) {
-        return ResponseEntity.ok(roundStudentService.listRoundsByNumberRoundAndGrades(numberRound, idGrade));
+    @GetMapping("/{idRound}")
+    public ResponseEntity<List<RoundStudentDTO>> listRoundsByNumberRoundAndGrades(@PathVariable Integer idRound) {
+        return ResponseEntity.ok(roundStudentService.listRoundsByNumberRoundAndGrades(idRound));
     }
 
-    @PatchMapping("/{idRound}")
-    public ResponseEntity<RoundStudentDTO> updateRound(@PathVariable Integer idRound, @RequestBody RoundStudentDTO roundStudentDTO){
-        return ResponseEntity.ok(roundStudentService.updateRound(idRound, roundStudentDTO));
+    @PatchMapping("/{idRoundStudent}")
+    public ResponseEntity<RoundStudentDTO> updateRound(@PathVariable Integer idRoundStudent, @RequestBody RoundStudentDTO roundStudentDTO){
+        return ResponseEntity.ok(roundStudentService.updateRound(idRoundStudent, roundStudentDTO));
     }
 
     @PostMapping()

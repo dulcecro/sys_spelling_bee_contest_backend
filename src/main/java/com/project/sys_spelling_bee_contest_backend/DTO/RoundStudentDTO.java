@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class RoundStudentDTO {
+    private Integer idRoundStudent;
     private Integer idRound;
     private Integer numberRound;
     private Integer idStudentEventRound;

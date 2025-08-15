@@ -20,8 +20,8 @@ public class RoundStudentImpl implements RoundStudentService {
     private final WordRepository wordRepository;
 
     @Override
-    public List<RoundStudentDTO> listRoundsByNumberRoundAndGrades(Integer numberRound, Integer idGrade) {
-        List<RoundStudent> roundStudents = roundStudentRepository.findAllByNumberRoundAndIdStudentEventRound_IdGradeDetail_IdGradeOrderByIdStudentEventRound_IdStudentDetail_PaternalSurnameAscIdStudentEventRound_IdStudentDetail_MaternalSurnameAsc(numberRound, idGrade);
+    public List<RoundStudentDTO> listRoundsByNumberRoundAndGrades(Integer idRound) {
+        List<RoundStudent> roundStudents = roundStudentRepository.findAllByIdRound_IdRoundOrderByIdStudentEventRound_IdStudentDetail_PaternalSurnameAscIdStudentEventRound_IdStudentDetail_MaternalSurnameAsc(idRound);
         if(roundStudents.isEmpty()){
             throw new RuntimeException("The list of roundStudents is empty");
         };
@@ -29,8 +29,8 @@ public class RoundStudentImpl implements RoundStudentService {
     }
 
     @Override
-    public RoundStudentDTO updateRound(Integer idRound, RoundStudentDTO roundStudentDTO){
-        RoundStudent rounds = roundStudentRepository.findById(idRound).orElseThrow(()-> new RuntimeException("The round with ID" + idRound + " does not exist"));
+    public RoundStudentDTO updateRound(Integer idRoundStudent, RoundStudentDTO roundStudentDTO){
+        RoundStudent rounds = roundStudentRepository.findById(idRoundStudent).orElseThrow(()-> new RuntimeException("The round with ID" + idRoundStudent + " does not exist"));
         if(roundStudentDTO.getCriterionOne() != null) rounds.setCriterionOne(roundStudentDTO.getCriterionOne());
         if(roundStudentDTO.getCriterionTwo() != null) rounds.setCriterionTwo(roundStudentDTO.getCriterionTwo());
         if(roundStudentDTO.getCriterionThree() != null) rounds.setCriterionThree(roundStudentDTO.getCriterionThree());

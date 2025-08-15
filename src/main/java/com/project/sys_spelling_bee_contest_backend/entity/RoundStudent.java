@@ -7,7 +7,7 @@ import lombok.Setter;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity
-@Table(name = "round", schema = "sbee")
+@Table(name = "round_student", schema = "sbee")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,11 +15,12 @@ import org.hibernate.annotations.DynamicInsert;
 public class RoundStudent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_round")
-    private Integer idRound;
+    @Column(name = "id_round_student")
+    private Integer idRoundStudent;
 
-    @Column(name = "number_round")
-    private Integer numberRound;
+    @ManyToOne
+    @JoinColumn(name = "id_round", nullable = false)
+    private Round idRound;
 
     @ManyToOne
     @JoinColumn(name = "id_student_event", nullable = false)
