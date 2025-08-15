@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/sbee/round")
+@RequestMapping("/sbee/round_student")
 @RequiredArgsConstructor
 public class RoundStudentController {
     private final RoundStudentService roundStudentService;
