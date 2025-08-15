@@ -12,7 +12,7 @@ import org.hibernate.annotations.DynamicInsert;
 @Setter
 @NoArgsConstructor
 @DynamicInsert
-public class Round {
+public class RoundStudent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_round")

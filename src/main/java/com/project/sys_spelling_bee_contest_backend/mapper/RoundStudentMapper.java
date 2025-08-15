@@ -1,13 +1,13 @@
 package com.project.sys_spelling_bee_contest_backend.mapper;
 
-import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
-import com.project.sys_spelling_bee_contest_backend.entity.Round;
+import com.project.sys_spelling_bee_contest_backend.DTO.RoundStudentDTO;
+import com.project.sys_spelling_bee_contest_backend.entity.RoundStudent;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
 @Mapper(componentModel = "spring")
-public interface RoundMapper {
+public interface RoundStudentMapper {
     @Mappings({
             @Mapping(source = "idStudentEventRound.idStudentEvent", target = "idStudentEventRound"),
             @Mapping(source = "idStudentEventRound.idStudentDetail.paternalSurname", target = "paternalSurname"),
@@ -16,11 +16,11 @@ public interface RoundMapper {
             @Mapping(source = "idWordRound.idWord", target = "idWordRound"),
             @Mapping(source = "idWordRound.word", target = "word")
     })
-    RoundDTO roundToDTO(Round round);
+    RoundStudentDTO roundStudentToDTO(RoundStudent roundStudent);
 
     @Mappings({
             @Mapping(source = "idStudentEventRound", target = "idStudentEventRound.idStudentEvent"),
             @Mapping(source = "idWordRound", target = "idWordRound.idWord")
     })
-    Round dtoToRound(RoundDTO roundDTO);
+    RoundStudent dtoToRoundStudent(RoundStudentDTO roundStudentDTO);
 }
