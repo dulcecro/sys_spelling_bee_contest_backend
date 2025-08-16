@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface RoundStudentService {
     List<RoundStudentDTO> listRoundsByNumberRoundAndGrades(Integer idRound);
-    RoundStudentDTO updateRound(Integer idRoundStudent, RoundStudentDTO roundStudentDTO);
-    RoundStudentDTO addRound(RoundStudentDTO roundStudentDTO);
+    RoundStudentDTO updateRoundStudent(Integer idRoundStudent, RoundStudentDTO roundStudentDTO);
+    RoundStudentDTO addRoundStudent(RoundStudentDTO roundStudentDTO);
 }

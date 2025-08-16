@@ -24,4 +24,11 @@ public class RoundImpl implements RoundService {
         }
         return rounds.stream().map(roundMapper::roundToDTO).toList();
     }
+
+    @Override
+    public RoundDTO updateRound(Integer idRound, RoundDTO roundDTO){
+        Round round = roundRepository.findById(idRound).orElseThrow(()-> new RuntimeException("The round with ID: "+ idRound + " does not exist"));
+        if(roundDTO.getStatus() != null) round.setStatus(roundDTO.getStatus());
+        return roundMapper.roundToDTO(roundRepository.save(round));
+    }
 }

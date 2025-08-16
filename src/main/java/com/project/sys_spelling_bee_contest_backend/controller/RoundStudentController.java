@@ -21,11 +21,11 @@ public class RoundStudentController {
 
     @PatchMapping("/{idRoundStudent}")
     public ResponseEntity<RoundStudentDTO> updateRound(@PathVariable Integer idRoundStudent, @RequestBody RoundStudentDTO roundStudentDTO){
-        return ResponseEntity.ok(roundStudentService.updateRound(idRoundStudent, roundStudentDTO));
+        return ResponseEntity.ok(roundStudentService.updateRoundStudent(idRoundStudent, roundStudentDTO));
     }
 
     @PostMapping()
     public ResponseEntity<RoundStudentDTO> addRound(@RequestBody RoundStudentDTO roundStudentDTO){
-        return ResponseEntity.ok(roundStudentService.addRound(roundStudentDTO));
+        return ResponseEntity.ok(roundStudentService.addRoundStudent(roundStudentDTO));
     }
 }

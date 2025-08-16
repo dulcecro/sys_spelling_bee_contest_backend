@@ -29,8 +29,8 @@ public class RoundStudentImpl implements RoundStudentService {
     }
 
     @Override
-    public RoundStudentDTO updateRound(Integer idRoundStudent, RoundStudentDTO roundStudentDTO){
-        RoundStudent rounds = roundStudentRepository.findById(idRoundStudent).orElseThrow(()-> new RuntimeException("The round with ID" + idRoundStudent + " does not exist"));
+    public RoundStudentDTO updateRoundStudent(Integer idRoundStudent, RoundStudentDTO roundStudentDTO){
+        RoundStudent rounds = roundStudentRepository.findById(idRoundStudent).orElseThrow(()-> new RuntimeException("The roundStudents with ID" + idRoundStudent + " does not exist"));
         if(roundStudentDTO.getCriterionOne() != null) rounds.setCriterionOne(roundStudentDTO.getCriterionOne());
         if(roundStudentDTO.getCriterionTwo() != null) rounds.setCriterionTwo(roundStudentDTO.getCriterionTwo());
         if(roundStudentDTO.getCriterionThree() != null) rounds.setCriterionThree(roundStudentDTO.getCriterionThree());
@@ -47,7 +47,7 @@ public class RoundStudentImpl implements RoundStudentService {
     }
 
     @Override
-    public RoundStudentDTO addRound(RoundStudentDTO roundStudentDTO){
+    public RoundStudentDTO addRoundStudent(RoundStudentDTO roundStudentDTO){
         RoundStudent roundStudent = roundStudentMapper.dtoToRoundStudent(roundStudentDTO);
         if (roundStudent.getIdWordRound() != null && roundStudent.getIdWordRound().getIdWord() == null) {
             roundStudent.setIdWordRound(null);
