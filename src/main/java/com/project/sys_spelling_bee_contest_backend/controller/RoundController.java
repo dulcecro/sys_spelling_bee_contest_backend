@@ -20,7 +20,7 @@ public class RoundController {
     }
 
     @PatchMapping("/{idRound}")
-    public ResponseEntity<RoundDTO> updateRound(Integer idRound, RoundDTO roundDTO){
+    public ResponseEntity<RoundDTO> updateRound(@PathVariable Integer idRound, RoundDTO roundDTO){
         return ResponseEntity.ok(roundService.updateRound(idRound, roundDTO));
     }
 }
