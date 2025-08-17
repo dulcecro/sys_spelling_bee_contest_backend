@@ -31,4 +31,8 @@ public class RoundImpl implements RoundService {
         if(roundDTO.getClose() != null) round.setClose(roundDTO.getClose());
         return roundMapper.roundToDTO(roundRepository.save(round));
     }
+
+//    public RoundDTO addRound(RoundDTO roundDTO){
+//
+//    }
 }
