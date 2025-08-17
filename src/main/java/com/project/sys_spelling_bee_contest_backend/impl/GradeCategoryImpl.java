@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,5 +33,11 @@ public class GradeCategoryImpl implements GradeCategoryService {
         return gradeCategoryRepository.findById(idGradeCategory).
                 map(gradeCategoryMapper::gradeCategoryToDTO).
                 orElseThrow(() -> new RuntimeException("Grade category not found with ID: " + idGradeCategory));
+    }
+
+    @Override
+    public GradeCategory getIdGradeCategory(Integer idGrade, Integer idCategory){
+        return gradeCategoryRepository.findByIdGradeDetalle_IdGrade_AndIdCategoryDetalle_IdCategory(idGrade, idCategory)
+                .orElseThrow(()-> new RuntimeException("Doesn't exits combination with idGrade " + idGrade + " and idCategory: " + idCategory));
     }
 }

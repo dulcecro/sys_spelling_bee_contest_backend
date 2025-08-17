@@ -1,6 +1,7 @@
 package com.project.sys_spelling_bee_contest_backend.impl;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.EventDTO;
+import com.project.sys_spelling_bee_contest_backend.entity.Event;
 import com.project.sys_spelling_bee_contest_backend.mapper.EventMapper;
 import com.project.sys_spelling_bee_contest_backend.repository.EventRepository;
 import com.project.sys_spelling_bee_contest_backend.service.EventService;
@@ -14,9 +15,8 @@ public class EventImpl implements EventService {
     private final EventMapper eventMapper;
 
     @Override
-    public EventDTO listEvent(){
+    public Event eventActive(){
         return eventRepository.findEventByStatusIsTrue()
-                .map(eventMapper::eventToDTO)
                 .orElseThrow(() -> new RuntimeException("There isn't any event active"));
     }
 }

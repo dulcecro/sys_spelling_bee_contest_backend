@@ -1,6 +1,6 @@
 package com.project.sys_spelling_bee_contest_backend.controller;
 
-import com.project.sys_spelling_bee_contest_backend.DTO.EventDTO;
+import com.project.sys_spelling_bee_contest_backend.entity.Event;
 import com.project.sys_spelling_bee_contest_backend.service.EventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ public class EventController {
     private final EventService eventService;
 
     @GetMapping()
-    public ResponseEntity<EventDTO> listEvent(){
-        return ResponseEntity.ok(eventService.listEvent());
+    public ResponseEntity<Event> eventActive(){
+        return ResponseEntity.ok(eventService.eventActive());
     }
 }

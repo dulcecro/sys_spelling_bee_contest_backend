@@ -23,4 +23,9 @@ public class RoundController {
     public ResponseEntity<RoundDTO> updateRound(@PathVariable Integer idRound, RoundDTO roundDTO){
         return ResponseEntity.ok(roundService.updateRound(idRound, roundDTO));
     }
+
+    @PostMapping("/{idGrade}/{idCategory}")
+    public ResponseEntity<RoundDTO> createRound(@PathVariable Integer idGrade, @PathVariable Integer idCategory){
+        return ResponseEntity.ok(roundService.createRound(idGrade, idCategory));
+    }
 }

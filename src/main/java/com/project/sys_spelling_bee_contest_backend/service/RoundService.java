@@ -7,5 +7,5 @@ import java.util.List;
 public interface RoundService {
     List<RoundDTO> listRounds(Integer idGrade);
     RoundDTO updateRound(Integer idRound, RoundDTO roundDTO);
-    // RoundDTO addRound(RoundDTO roundDTO);
+    RoundDTO createRound(Integer idGrade, Integer idCategory);
 }
