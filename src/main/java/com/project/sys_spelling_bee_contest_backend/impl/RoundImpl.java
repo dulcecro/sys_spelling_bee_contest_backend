@@ -18,7 +18,7 @@ public class RoundImpl implements RoundService {
 
     @Override
     public List<RoundDTO> listRounds(Integer idGrade){
-        List<Round> rounds = roundRepository.findByIdGradeRound_IdGrade(idGrade);
+        List<Round> rounds = roundRepository.findByIdGradeCategoryRound_IdGradeDetalle_IdGrade(idGrade);
         if(rounds.isEmpty()){
             throw new RuntimeException("The list of rounds is empty");
         }
@@ -28,7 +28,7 @@ public class RoundImpl implements RoundService {
     @Override
     public RoundDTO updateRound(Integer idRound, RoundDTO roundDTO){
         Round round = roundRepository.findById(idRound).orElseThrow(()-> new RuntimeException("The round with ID: "+ idRound + " does not exist"));
-        if(roundDTO.getStatus() != null) round.setStatus(roundDTO.getStatus());
+        if(roundDTO.getClose() != null) round.setClose(roundDTO.getClose());
         return roundMapper.roundToDTO(roundRepository.save(round));
     }
 }

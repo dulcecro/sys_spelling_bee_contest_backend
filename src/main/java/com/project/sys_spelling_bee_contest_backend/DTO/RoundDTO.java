@@ -9,9 +9,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RoundDTO {
     private Integer idRound;
+    private Integer numberRound;
     private Integer idGrade;
     private String gradeRound;
     private String levelGrade;
-    private Integer numberRound;
-    private Boolean status;
+    private Integer idCategory;
+    private String categoryRound;
+    private Boolean close;
 }

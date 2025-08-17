@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface RoundRepository extends JpaRepository<Round, Integer> {
-    List<Round> findByIdGradeRound_IdGrade(Integer idGrade);
+    List<Round> findByIdGradeCategoryRound_IdGradeDetalle_IdGrade(Integer idGrade);
 }

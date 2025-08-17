@@ -21,12 +21,12 @@ public class Round {
     private Event idEventRound;
 
     @ManyToOne()
-    @JoinColumn(name = "id_grade", nullable = false)
-    private Grade idGradeRound;
+    @JoinColumn(name = "id_grade_category", nullable = false)
+    private GradeCategory idGradeCategoryRound;
 
     @Column(name = "number_round")
     private Integer numberRound;
 
-    @Column(columnDefinition = "BOOLEAN DEFAULT TRUE")
-    private Boolean status = true;
+    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private Boolean close = false;
 }
