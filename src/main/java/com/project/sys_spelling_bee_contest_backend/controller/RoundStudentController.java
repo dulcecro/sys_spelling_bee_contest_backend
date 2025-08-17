@@ -15,8 +15,8 @@ public class RoundStudentController {
     private final RoundStudentService roundStudentService;
 
     @GetMapping("/{idRound}")
-    public ResponseEntity<List<RoundStudentDTO>> listRoundsByNumberRoundAndGrades(@PathVariable Integer idRound) {
-        return ResponseEntity.ok(roundStudentService.listRoundsByNumberRoundAndGrades(idRound));
+    public ResponseEntity<List<RoundStudentDTO>> listRoundsByIdRound(@PathVariable Integer idRound) {
+        return ResponseEntity.ok(roundStudentService.listRoundsByIdRound(idRound));
     }
 
     @PatchMapping("/{idRoundStudent}")

@@ -5,7 +5,7 @@ import com.project.sys_spelling_bee_contest_backend.DTO.RoundStudentDTO;
 import java.util.List;
 
 public interface RoundStudentService {
-    List<RoundStudentDTO> listRoundsByNumberRoundAndGrades(Integer idRound);
+    List<RoundStudentDTO> listRoundsByIdRound(Integer idRound);
     RoundStudentDTO updateRoundStudent(Integer idRoundStudent, RoundStudentDTO roundStudentDTO);
     RoundStudentDTO addRoundStudent(RoundStudentDTO roundStudentDTO);
 }

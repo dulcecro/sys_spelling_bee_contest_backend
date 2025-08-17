@@ -20,7 +20,7 @@ public class RoundStudentImpl implements RoundStudentService {
     private final WordRepository wordRepository;
 
     @Override
-    public List<RoundStudentDTO> listRoundsByNumberRoundAndGrades(Integer idRound) {
+    public List<RoundStudentDTO> listRoundsByIdRound(Integer idRound) {
         List<RoundStudent> roundStudents = roundStudentRepository.findAllByIdRound_IdRoundOrderByIdStudentEventRound_IdStudentDetail_PaternalSurnameAscIdStudentEventRound_IdStudentDetail_MaternalSurnameAsc(idRound);
         if(roundStudents.isEmpty()){
             throw new RuntimeException("The list of roundStudents is empty");
