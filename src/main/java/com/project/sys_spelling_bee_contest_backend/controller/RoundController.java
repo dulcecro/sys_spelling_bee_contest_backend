@@ -1,6 +1,7 @@
 package com.project.sys_spelling_bee_contest_backend.controller;
 
 import com.project.sys_spelling_bee_contest_backend.DTO.RoundDTO;
+import com.project.sys_spelling_bee_contest_backend.DTO.RoundRequest;
 import com.project.sys_spelling_bee_contest_backend.service.RoundService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +25,8 @@ public class RoundController {
         return ResponseEntity.ok(roundService.updateRound(idRound, roundDTO));
     }
 
-    @PostMapping("/{idGrade}/{idCategory}")
-    public ResponseEntity<RoundDTO> createRound(@PathVariable Integer idGrade, @PathVariable Integer idCategory){
-        return ResponseEntity.ok(roundService.createRound(idGrade, idCategory));
+    @PostMapping()
+    public ResponseEntity<RoundDTO> createRound(@RequestBody RoundRequest request){
+        return ResponseEntity.ok(roundService.createRound(request.getIdGrade(), request.getIdCategory()));
     }
 }

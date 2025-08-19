@@ -28,7 +28,7 @@ public class RoundImpl implements RoundService {
 
     @Override
     public List<RoundDTO> listRounds(Integer idGrade){
-        List<Round> rounds = roundRepository.findByIdGradeCategoryRound_IdGradeDetalle_IdGrade(idGrade);
+        List<Round> rounds = roundRepository.findByIdGradeCategoryRound_IdGradeDetalle_IdGradeOrderByIdRoundDesc(idGrade);
         return rounds.stream().map(roundMapper::roundToDTO).toList();
     }
 

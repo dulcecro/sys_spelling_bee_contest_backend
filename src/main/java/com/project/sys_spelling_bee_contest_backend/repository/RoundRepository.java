@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RoundRepository extends JpaRepository<Round, Integer> {
-    List<Round> findByIdGradeCategoryRound_IdGradeDetalle_IdGrade(Integer idGrade);
+    List<Round> findByIdGradeCategoryRound_IdGradeDetalle_IdGradeOrderByIdRoundDesc(Integer idGrade);
     Round findTopByIdGradeCategoryRound_IdGradeDetalle_IdGradeOrderByIdRoundDesc(Integer idGrade);
 }
