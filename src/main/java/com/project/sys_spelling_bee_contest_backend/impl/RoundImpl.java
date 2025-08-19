@@ -10,8 +10,10 @@ import com.project.sys_spelling_bee_contest_backend.repository.RoundRepository;
 import com.project.sys_spelling_bee_contest_backend.service.EventService;
 import com.project.sys_spelling_bee_contest_backend.service.GradeCategoryService;
 import com.project.sys_spelling_bee_contest_backend.service.RoundService;
+import com.project.sys_spelling_bee_contest_backend.service.RoundStudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,6 +24,7 @@ public class RoundImpl implements RoundService {
     private final RoundMapper roundMapper;
     private final GradeCategoryService gradeCategoryService;
     private final EventService eventService;
+    private final RoundStudentService roundStudentService;
 
     @Override
     public List<RoundDTO> listRounds(Integer idGrade){
@@ -36,9 +39,14 @@ public class RoundImpl implements RoundService {
         return roundMapper.roundToDTO(roundRepository.save(round));
     }
 
+    @Override
+    @Transactional
     public RoundDTO createRound(Integer idGrade, Integer idCategory){
         // Get idGradeCategory
         GradeCategory gradeCategory = gradeCategoryService.getIdGradeCategory(idGrade, idCategory);
+        int idGradeCategory = gradeCategory.getIdGradeCategory();
+
+        RoundStudentService.RoundAssignmentData assignmentData = roundStudentService.validateAndPrepareAssignment(idGrade, idGradeCategory);
 
         // List rounds by idGrade
         List<RoundDTO> listRounds = listRounds(idGrade);
@@ -59,6 +67,9 @@ public class RoundImpl implements RoundService {
         newRound.setIdGradeCategoryRound(gradeCategory);
         newRound.setNumberRound(nextNumberRound);
 
-        return roundMapper.roundToDTO(roundRepository.save(newRound));
+        newRound = roundRepository.save(newRound);
+        roundStudentService.createRoundStudent(newRound, assignmentData);
+
+        return roundMapper.roundToDTO(newRound);
     }
 }

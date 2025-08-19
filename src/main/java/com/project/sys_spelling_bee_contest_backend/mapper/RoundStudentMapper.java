@@ -6,6 +6,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface RoundStudentMapper {
     @Mappings({
@@ -19,6 +21,7 @@ public interface RoundStudentMapper {
             @Mapping(source = "idWordRound.word", target = "word")
     })
     RoundStudentDTO roundStudentToDTO(RoundStudent roundStudent);
+    List<RoundStudentDTO> roundStudentListToDTOList(List<RoundStudent> roundStudentList);
 
     @Mappings({
             @Mapping(source = "idStudentEventRound", target = "idStudentEventRound.idStudentEvent"),
@@ -26,4 +29,6 @@ public interface RoundStudentMapper {
             @Mapping(source = "idRound", target = "idRound.idRound")
     })
     RoundStudent dtoToRoundStudent(RoundStudentDTO roundStudentDTO);
+
+
 }

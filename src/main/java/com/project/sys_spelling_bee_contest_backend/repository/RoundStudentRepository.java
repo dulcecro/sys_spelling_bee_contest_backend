@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface RoundStudentRepository extends JpaRepository<RoundStudent, Integer> {
     List<RoundStudent> findAllByIdRound_IdRoundOrderByIdStudentEventRound_IdStudentDetail_PaternalSurnameAscIdStudentEventRound_IdStudentDetail_MaternalSurnameAsc(Integer idRound);
+    List<RoundStudent> findAllByIdWordRound_IdGradeCategory_idGradeCategory (Integer idGradeCategory);
 }
