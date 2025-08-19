@@ -50,4 +50,7 @@ public class RoundStudent {
 
     @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean close = false;
+
+    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private Boolean active = false;
 }

@@ -112,7 +112,6 @@ public class RoundStudentImpl implements RoundStudentService {
         return new RoundAssignmentData(studentsIds, availableWords);
     }
 
-
     @Override
     public List<RoundStudentDTO> createRoundStudent(Round idRound, RoundAssignmentData assignmentData) {
 
@@ -134,6 +133,7 @@ public class RoundStudentImpl implements RoundStudentService {
                     Word word = new Word();
                     word.setIdWord(selectWords.get(i).getIdWord());
                     roundStudent.setIdWordRound(word);
+                    roundStudent.setActive(i == 0);
                     return roundStudent;
                 }).toList();
 

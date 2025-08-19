@@ -24,4 +24,5 @@ public class RoundStudentDTO {
     private Integer criterionFive;
     private Integer position;
     private Boolean close;
+    private Boolean active;
 }
